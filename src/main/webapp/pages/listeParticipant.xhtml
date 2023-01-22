@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+	<ui:composition template="/templates/templateAdmin.xhtml">
+	
+<div style="font-size: 14px ; padding-top: 40px; padding-left: 100px; padding-right: 100px">
+	
+        <p:dataTable style="text-align:center" id="tbl" var="variable" value="#{participantControllers.listTable}"
+                 paginator="true" rows="10">
+                
+           <f:facet name="header" > LISTE DES PARTICIPANTS </f:facet>
+           
+		
+           
+           <p:column style="width:90px">
+                <f:facet name="header" >
+                    <h:outputText value="Nom" style="color: #125181; "/>
+                </f:facet>
+                <h:outputText value="#{variable.nomParticipant}"/>
+            </p:column>
+           
+           
+             <p:column style="width:100px">
+                <f:facet name="header" >
+                    <h:outputText value="Prenom" style="color: #125181"/>
+                </f:facet>
+                <h:outputText value="#{variable.prenomParticipant}"/>
+            </p:column>
+     
+            
+             <p:column style="width:200px">
+                <f:facet name="header" >
+                    <h:outputText value="Numéro téléphone" style="color: #125181; width:80px"/>
+                </f:facet>
+                <h:outputText value="#{variable.numeroParticipant}"/>
+            </p:column>
+            
+            <p:column style="width:200px">
+                <f:facet name="header" >
+                    <h:outputText value="Adresse email" style="color: #125181; width:80px"/>
+                </f:facet>
+                <h:outputText value="#{variable.adresseParticipant}"/>
+            </p:column>
+            
+</p:dataTable>
+           </div> 
+	
+	
+	
+			
+	
+	
+	</ui:composition>
+</html>
